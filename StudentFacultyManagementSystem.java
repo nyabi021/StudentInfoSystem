@@ -1,163 +1,163 @@
 package org.example;
 
-import java.util.ArrayList; // ArrayList 클래스 임포트
-import java.util.List; // List 인터페이스 임포트
+import java.util.ArrayList; // Import ArrayList class
+import java.util.List; // Import List interface
 
-class Student { // 학생 클래스 정의
-    private final String studentId; // 학생 ID
-    private String name; // 학생 이름
-    private String department; // 학과
-    private String ssn; // 주민등록번호
+class Student { // Define Student class
+    private final String studentId; // Student ID
+    private String name; // Student name
+    private String department; // Department
+    private String ssn; // Social Security Number (SSN)
 
-    public Student(String studentId, String name, String department, String ssn) { // 생성자
-        this.studentId = studentId; // 학생 ID 초기화
-        this.name = name; // 이름 초기화
-        this.department = department; // 학과 초기화
-        this.ssn = ssn; // 주민등록번호 초기화
+    public Student(String studentId, String name, String department, String ssn) { // Constructor
+        this.studentId = studentId; // Initialize student ID
+        this.name = name; // Initialize name
+        this.department = department; // Initialize department
+        this.ssn = ssn; // Initialize SSN
     }
 
-    public String getStudentId() { // 학생 ID 반환
+    public String getStudentId() { // Return student ID
         return studentId;
     }
 
-    public String getName() { // 학생 이름 반환
+    public String getName() { // Return student name
         return name;
     }
 
-    public void setName(String name) { // 학생 이름 설정
+    public void setName(String name) { // Set student name
         this.name = name;
     }
 
-    public void setDepartment(String department) { // 학과 설정
+    public void setDepartment(String department) { // Set department
         this.department = department;
     }
 
-    public void setSsn(String ssn) { // 주민등록번호 설정
+    public void setSsn(String ssn) { // Set SSN
         this.ssn = ssn;
     }
 
     @Override
-    public String toString() { // 학생 정보를 문자열로 반환
+    public String toString() { // Return student information as a string
         return "Student ID: " + studentId + ", Name: " + name + ", Department: " + department + ", SSN: " + ssn;
     }
 }
 
-class Professor { // 교수 클래스 정의
-    private final String professorId; // 교수 번호
-    private String name; // 교수 이름
-    private String department; // 학과
-    private String ssn; // 주민등록번호
+class Professor { // Define Professor class
+    private final String professorId; // Professor ID
+    private String name; // Professor name
+    private String department; // Department
+    private String ssn; // Social Security Number (SSN)
 
-    public Professor(String professorId, String name, String department, String ssn) { // 생성자
-        this.professorId = professorId; // 교수 번호 초기화
-        this.name = name; // 이름 초기화
-        this.department = department; // 학과 초기화
-        this.ssn = ssn; // 주민등록번호 초기화
+    public Professor(String professorId, String name, String department, String ssn) { // Constructor
+        this.professorId = professorId; // Initialize professor ID
+        this.name = name; // Initialize name
+        this.department = department; // Initialize department
+        this.ssn = ssn; // Initialize SSN
     }
 
-    public String getProfessorId() { // 교수 번호 반환
+    public String getProfessorId() { // Return professor ID
         return professorId;
     }
 
-    public String getName() { // 교수 이름 반환
+    public String getName() { // Return professor name
         return name;
     }
 
-    public void setName(String name) { // 교수 이름 설정
+    public void setName(String name) { // Set professor name
         this.name = name;
     }
 
-    public void setDepartment(String department) { // 학과 설정
+    public void setDepartment(String department) { // Set department
         this.department = department;
     }
 
-    public void setSsn(String ssn) { // 주민등록번호 설정
+    public void setSsn(String ssn) { // Set SSN
         this.ssn = ssn;
     }
 
     @Override
-    public String toString() { // 교수 정보를 문자열로 반환
+    public String toString() { // Return professor information as a string
         return "Professor ID: " + professorId + ", Name: " + name + ", Department: " + department + ", SSN: " + ssn;
     }
 }
 
-class UniversityManagement { // 학사 관리 클래스 정의
-    private final List<Student> students; // 학생 목록
-    private final List<Professor> professors; // 교수 목록
+class UniversityManagement { // Define University Management class
+    private final List<Student> students; // List of students
+    private final List<Professor> professors; // List of professors
 
-    public UniversityManagement() { // 생성자
-        students = new ArrayList<>(); // 학생 목록 초기화
-        professors = new ArrayList<>(); // 교수 목록 초기화
+    public UniversityManagement() { // Constructor
+        students = new ArrayList<>(); // Initialize student list
+        professors = new ArrayList<>(); // Initialize professor list
     }
 
-    // 학생 관리
-    public void addStudent(Student student) { // 학생 추가
+    // Student management
+    public void addStudent(Student student) { // Add student
         students.add(student);
     }
 
-    public void updateStudent(String studentId, String name, String department, String ssn) { // 학생 정보 수정
-        for (Student student : students) { // 학생 목록에서 검색
-            if (student.getStudentId().equals(studentId)) { // 해당 학생 ID와 일치하는 경우
-                student.setName(name); // 이름 수정
-                student.setDepartment(department); // 학과 수정
-                student.setSsn(ssn); // 주민등록번호 수정
-                break; // 수정 후 종료
+    public void updateStudent(String studentId, String name, String department, String ssn) { // Update student information
+        for (Student student : students) { // Search in student list
+            if (student.getStudentId().equals(studentId)) { // If student ID matches
+                student.setName(name); // Update name
+                student.setDepartment(department); // Update department
+                student.setSsn(ssn); // Update SSN
+                break; // Exit after update
             }
         }
     }
 
-    public void deleteStudent(String studentId) { // 학생 삭제
-        students.removeIf(student -> student.getStudentId().equals(studentId)); // 해당 학생 ID와 일치하는 경우 삭제
+    public void deleteStudent(String studentId) { // Delete student
+        students.removeIf(student -> student.getStudentId().equals(studentId)); // Remove if student ID matches
     }
 
-    public Student findStudentByIdOrName(String studentId, String name) { // 학생 ID 또는 이름으로 학생 검색
-        for (Student student : students) { // 학생 목록에서 검색
-            if (student.getStudentId().equals(studentId) || student.getName().equalsIgnoreCase(name)) { // 학생 ID 또는 이름이 일치하는 경우
-                return student; // 학생 반환
+    public Student findStudentByIdOrName(String studentId, String name) { // Find student by ID or name
+        for (Student student : students) { // Search in student list
+            if (student.getStudentId().equals(studentId) || student.getName().equalsIgnoreCase(name)) { // If student ID or name matches
+                return student; // Return student
             }
         }
-        return null; // 일치하는 학생이 없는 경우 null 반환
+        return null; // Return null if no match found
     }
 
-    // 교수 관리
-    public void addProfessor(Professor professor) { // 교수 추가
+    // Professor management
+    public void addProfessor(Professor professor) { // Add professor
         professors.add(professor);
     }
 
-    public void updateProfessor(String professorId, String name, String department, String ssn) { // 교수 정보 수정
-        for (Professor professor : professors) { // 교수 목록에서 검색
-            if (professor.getProfessorId().equals(professorId)) { // 해당 교수 번호와 일치하는 경우
-                professor.setName(name); // 이름 수정
-                professor.setDepartment(department); // 학과 수정
-                professor.setSsn(ssn); // 주민등록번호 수정
-                break; // 수정 후 종료
+    public void updateProfessor(String professorId, String name, String department, String ssn) { // Update professor information
+        for (Professor professor : professors) { // Search in professor list
+            if (professor.getProfessorId().equals(professorId)) { // If professor ID matches
+                professor.setName(name); // Update name
+                professor.setDepartment(department); // Update department
+                professor.setSsn(ssn); // Update SSN
+                break; // Exit after update
             }
         }
     }
 
-    public void deleteProfessor(String professorId) { // 교수 삭제
-        professors.removeIf(professor -> professor.getProfessorId().equals(professorId)); // 해당 교수 번호와 일치하는 경우 삭제
+    public void deleteProfessor(String professorId) { // Delete professor
+        professors.removeIf(professor -> professor.getProfessorId().equals(professorId)); // Remove if professor ID matches
     }
 
-    public Professor findProfessorByIdOrName(String professorId, String name) { // 교수 번호 또는 이름으로 교수 검색
-        for (Professor professor : professors) { // 교수 목록에서 검색
-            if (professor.getProfessorId().equals(professorId) || professor.getName().equalsIgnoreCase(name)) { // 교수 번호 또는 이름이 일치하는 경우
-                return professor; // 교수 반환
+    public Professor findProfessorByIdOrName(String professorId, String name) { // Find professor by ID or name
+        for (Professor professor : professors) { // Search in professor list
+            if (professor.getProfessorId().equals(professorId) || professor.getName().equalsIgnoreCase(name)) { // If professor ID or name matches
+                return professor; // Return professor
             }
         }
-        return null; // 일치하는 교수가 없는 경우 null 반환
+        return null; // Return null if no match found
     }
 
-    // 학생 목록 출력
+    // Display all students
     public void displayAllStudents() {
-        for (Student student : students) { // 학생 목록에서 각 학생 출력
+        for (Student student : students) { // Print each student in the list
             System.out.println(student);
         }
     }
 
-    // 교수 목록 출력
+    // Display all professors
     public void displayAllProfessors() {
-        for (Professor professor : professors) { // 교수 목록에서 각 교수 출력
+        for (Professor professor : professors) { // Print each professor in the list
             System.out.println(professor);
         }
     }
